@@ -1,0 +1,43 @@
+name: "BuyWhere MCP Server"
+description: >-
+  Start the BuyWhere MCP server in your GitHub Actions workflow.
+  Gives AI agents access to 1.5M+ products across 20+ e-commerce
+  platforms in Southeast Asia and the US.
+
+author: "BuyWhere"
+
+branding:
+  icon: "shopping-cart"
+  color: "indigo"
+
+inputs:
+  api-key:
+    description: "BuyWhere API key. Get a free key at https://api.buywhere.ai/v1/auth/register"
+    required: true
+  api-url:
+    description: "BuyWhere API base URL"
+    required: false
+    default: "https://api.buywhere.ai"
+  mcp-port:
+    description: "Port for the MCP server"
+    required: false
+    default: "8081"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install MCP server
+      shell: bash
+      run: npm install -g @buywhere/mcp-server
+
+    - name: Start MCP server
+      shell: bash
+      env:
+        BUYWHERE_API_KEY: ${{ inputs.api-key }}
+        BUYWHERE_API_URL: ${{ inputs.api-url }}
+        MCP_PORT: ${{ inputs.mcp-port }}
+      run: |
+        npx @buywhere/mcp-server &
+        echo "MCP_SERVER_PID=$!" >> $GITHUB_ENV
+        sleep 2
+        echo "BuyWhere MCP server started on port $MCP_PORT"
