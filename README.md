@@ -1,6 +1,7 @@
 # BuyWhere MCP Server — GitHub Action
 
 [![GitHub Marketplace](https://img.shields.io/badge/Marketplace-BuyWhere%20MCP%20Server-blue.svg)](https://github.com/marketplace/actions/buywhere-mcp-server)
+<a href="https://buywhere.ai/api-keys"><img src="https://img.shields.io/badge/🔑_Get_your_free_API_key-60_seconds-4f46e5?style=for-the-badge" alt="Get your free API key"></a>
 
 Start the **BuyWhere MCP server** in your GitHub Actions workflow. Give your AI agents real-time access to **1.5M+ products** across **20+ e-commerce platforms** in Southeast Asia and the US.
 
@@ -89,6 +90,10 @@ Free tier: **1,000 calls/month**. Pro: $19/mo. Enterprise: custom pricing.
 - [Website](https://buywhere.ai)
 - [Pricing](https://buywhere.ai/pricing)
 - [GitHub](https://github.com/BuyWhere/buywhere)
+
+## Get your API key
+
+Sign up free at [https://buywhere.ai/api-keys](https://buywhere.ai/api-keys) — 60 seconds, no credit card.
 
 ## License
 
